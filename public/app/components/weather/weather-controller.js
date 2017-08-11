@@ -1,5 +1,5 @@
 function WeatherController() {
-	var self = this;
+	var _this = this;
 	var service = new WeatherService();
 	var currentUnit = "C";
 	var temp;
@@ -66,5 +66,5 @@ function WeatherController() {
 		service.getWeather(drawWeather);
 	}
 
-	self.getWeather();
+	_this.getWeather();
 }

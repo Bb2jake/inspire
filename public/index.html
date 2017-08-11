@@ -8,14 +8,12 @@
 
 <body id="body">
 	<div id="background">
-		<div id="background-description">
-			
-		</div>
+		<div id="background-description"></div>
+
 		<div id="weather"></div>
 
-		<div id="quote">
-			The Quote
-		</div>
+		<div id="quote" class="text-center" onpointerenter="app.controllers.quote.showAuthor()" 
+			onpointerleave="app.controllers.quote.hideAuthor()" onclick="app.controllers.quote.getQuote()"></div>
 
 		<div id="todo">
 			<form onsubmit=""></form>

@@ -39,3 +39,18 @@
 #weather-icon {
   height: 25px;
 }
+
+#quote {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 18px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+#quote-author {
+  display: none;
+}

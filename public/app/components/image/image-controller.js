@@ -1,5 +1,5 @@
 function ImageController() {
-	var self = this;
+	var _this = this;
 	var service = new ImageService();
 
 	function drawImage (image) {

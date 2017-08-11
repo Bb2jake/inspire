@@ -1,8 +1,30 @@
-function QuoteController(){
+function QuoteController() {
+	var _this = this;
+	var service = new QuoteService()
 
-	var qs = new QuoteService()
+	// TODO: Put stylized quote marks/images at beginning/eng of quote
+	function drawQuote(quoteObj) {
+		template = `
+			${quoteObj.content}
+			<p id="quote-author">-${quoteObj.title}<p>
+		`;
 
-	qs.getQuote(function(quote){
-		console.log('What is the quote', quote)
-	})
+		$("#quote").html(template);
+		$("#quote").show();
+	}
+
+	this.getQuote = function () {
+		$("#quote").hide();
+		service.getQuote(drawQuote);
+	}
+
+	this.showAuthor = function () {
+		$("#quote-author").show();
+	}
+
+	this.hideAuthor = function () {
+		$("#quote-author").hide();
+	}
+
+	_this.getQuote();
 }
