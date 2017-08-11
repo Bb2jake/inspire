@@ -21,7 +21,7 @@
 					<p>0 to do</p>
 				</div>
 				<ul id="todos" class="text-left"></ul>
-				<form onsubmit="app.controllers.todo.addTodo(event)">
+				<form id="add-todo-form" onsubmit="app.controllers.todo.addTodo(event)">
 					<input type="text" name="description" placeholder="New Todo">
 				</form>
 			</div>
@@ -36,12 +36,14 @@
 	<script src="app/components/image/image-service.js"></script>
 	<script src="app/components/quote/quote-service.js"></script>
 	<script src="app/components/todo/todo-service.js"></script>
+	<script src="app/components/clock/clock-service.js"></script>
 
 	<!--Controllers-->
 	<script src="app/components/weather/weather-controller.js"></script>
 	<script src="app/components/image/image-controller.js"></script>
 	<script src="app/components/quote/quote-controller.js"></script>
 	<script src="app/components/todo/todo-controller.js"></script>
+	<script src="app/components/clock/clock-controller.js"></script>
 
 	<!--Initialize App-->
 	<script src="app/init.js"></script>

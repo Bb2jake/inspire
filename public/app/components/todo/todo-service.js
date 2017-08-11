@@ -45,5 +45,9 @@ function TodoService() {
 			url: '/api/todos/' + todoId,
 			data: JSON.stringify(todo)
 		})
+			.then((message) => {
+				getTodos()
+			})
+			.fail(logError)
 	}
 }

@@ -20,9 +20,12 @@ function TodoController() {
 
 		todos.forEach(todo => {
 			template += `
-				<li>
-					<input ${todo.completed ? 'checked' : ''} type="checkbox" id=${todo._id} name="completed" onchange="app.controllers.todo.toggleTodoStatus('${todo._id}')">
-					<label for=${todo._id}>${todo.description}</label>
+				<li class="todo">
+					<div>
+						<input ${todo.completed ? 'checked' : ''} type="checkbox" id=${todo._id} name="completed" onchange="app.controllers.todo.toggleTodoStatus('${todo._id}')">
+						<label for=${todo._id}>${todo.description}</label>
+					</div>
+					<div class='glyphicon glyphicon-trash text-right todo-delete-button' onclick="app.controllers.todo.removeTodo('${todo._id}')"></div>
 				</li>
 			`
 		})
@@ -46,9 +49,10 @@ function TodoController() {
 	}
 
 	this.removeTodo = function (todoId) {
-
+		service.removeTodo(todoId, getTodos);
 	}
 
+	// TODO: Clicking anywhere outside the todo-list should close it as well.
 	this.toggleListDisplay = function () {
 		$('#todo-list').toggle();
 	}

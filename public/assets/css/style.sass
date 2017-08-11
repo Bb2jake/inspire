@@ -57,6 +57,7 @@ $text-black-outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
 	position: absolute;
 	bottom: 5px;
 	right: 5px;
+	max-width: 25%;
 
 #todo-list
 	display: none;
@@ -76,3 +77,26 @@ $text-black-outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
 
 #todo-counter
 	color: white;
+
+.todo-delete-button
+	cursor: pointer;
+
+.todo
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+.todo > div
+	display: flex;
+	align-items: center;
+
+.todo div input
+	margin-right: 5px;
+
+#add-todo-form input
+	width: 100%;
+
+label
+	max-width: 90%;
+
+// CLOCK

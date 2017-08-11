@@ -59,6 +59,7 @@
   position: absolute;
   bottom: 5px;
   right: 5px;
+  max-width: 25%;
 }
 
 #todo-list {
@@ -82,4 +83,31 @@
 
 #todo-counter {
   color: white;
+}
+
+.todo-delete-button {
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo > div {
+  display: flex;
+  align-items: center;
+}
+
+.todo div input {
+  margin-right: 5px;
+}
+
+#add-todo-form input {
+  width: 100%;
+}
+
+label {
+  max-width: 90%;
 }
