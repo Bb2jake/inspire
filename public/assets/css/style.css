@@ -1,0 +1,15 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+#background {
+  height: 100vh;
+  width: 100vw;
+  background: url("../images/default-background-image.jpg") no-repeat fixed center;
+  background-size: 100vw auto;
+  background-clip: content-box;
+  position: relative;
+}
+
+#weather {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

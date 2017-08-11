@@ -1,5 +1,4 @@
 function TodoController() {
-	// new up the TodoService that has already been configured for your use
 	// You will need four methods
 	// getTodos should request your api/todos and give an array of todos to your callback fn
 	// addTodo takes in a todo and posts it to the server
