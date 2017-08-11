@@ -1,15 +1,14 @@
 var mongoose = require('mongoose');
-var connection = mongoose.connection;
 
-mongoose.connect('mongodb://bb2jake:unlimited@ds064799.mlab.com:64799/gregslist', {
+mongoose.connect('mongodb://bb2jake:unlimited@ds034807.mlab.com:34807/inspire', {
 	server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
 	replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }
 });
 
-connection.on('error', err => {
+mongoose.connection.on('error', err => {
 	console.error('Something failed when connecting to mlab', err);
 });
 
-connection.once('open', () => {
+mongoose.connection.once('open', () => {
 	console.log('Connected to mlab');
 });

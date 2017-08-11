@@ -12,17 +12,22 @@
 
 		<div id="weather"></div>
 
-		<div id="quote" class="text-center" onpointerenter="app.controllers.quote.showAuthor()" 
-			onpointerleave="app.controllers.quote.hideAuthor()" onclick="app.controllers.quote.getQuote()"></div>
+		<div id="quote" class="text-center" onpointerenter="app.controllers.quote.showAuthor()" onpointerleave="app.controllers.quote.hideAuthor()"
+		 onclick="app.controllers.quote.getQuote()"></div>
 
-		<div id="todo">
-			<form onsubmit=""></form>
-			A Todo List
+		<div id="todo-list-container">
+			<div id="todo-list">
+				<div id="todo-counter">
+					<p>0 to do</p>
+				</div>
+				<ul id="todos" class="text-left"></ul>
+				<form onsubmit="app.controllers.todo.addTodo(event)">
+					<input type="text" name="description" placeholder="New Todo">
+				</form>
+			</div>
+			<p class="text-right" id="todo-button" onclick="app.controllers.todo.toggleListDisplay()">Todo</p>
 		</div>
 	</div>
-
-
-
 
 	<!--JS Libraries-->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

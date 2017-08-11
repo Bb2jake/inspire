@@ -9,6 +9,9 @@ server.use(express.static(__dirname + '/public'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
+var todosRouter = require('./routes/todos');
+server.use('/api/todos', todosRouter);
+
 server.listen(port, () => {
 	console.log(`
     Starting up node,

@@ -6,9 +6,6 @@ function WeatherController() {
 
 	/* TODO:
 	 * What to show:
-	 * 		Temp (clicking changes between C, F, and K)
-	 * 		Icon showing the weather (sun for clear, clouds for overcast, etc)
-	 * 
 	 * 		Bonus:
 	 * 			A way to change the city (search by zip or city/state) - if no response, give error tooltip, and keep the current data up
 	 * 			Long hover (> 1s?) brings up tooltip saying click to change the measurement unit
