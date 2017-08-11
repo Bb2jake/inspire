@@ -1,15 +1,39 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 
-// TODO: Set a default image while loading. OR have a loading icon while waiting for all the data to load.
+$text-black-outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+// Background
 #background
 	height: 100vh;
 	width: 100vw;
 	background: url('../images/default-background-image.jpg') no-repeat fixed center;
-	background-size: 100vw auto;
+	background-size: cover;
 	background-clip: content-box;
 	position: relative;
 
+#background-description
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+
+// Weather
 #weather
 	position: absolute;
 	top: 5px;
 	right: 5px;
+	text-shadow: $text-black-outline;
+	color: white;
+
+#weather > div
+	float: right;
+
+#city
+	font-size: 10px;
+
+#temperature
+	font-size: 16px;
+	margin-bottom: 0px;
+	cursor: pointer;
+
+#weather-icon
+	height: 25px;
