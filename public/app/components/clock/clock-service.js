@@ -19,6 +19,8 @@ function ClockService() {
 				hours -= 12;
 				append = 'pm';
 			} else {
+				if (hours == 0)
+					hours = 12;
 				append = 'am';
 			}
 		}
