@@ -1,8 +1,6 @@
 function WeatherController() {
 	var _this = this;
 	var service = new WeatherService();
-	var currentUnit = "C";
-	var temp;
 
 	/* TODO:
 	 * What to show:
@@ -15,7 +13,6 @@ function WeatherController() {
 	 */
 
 	function drawWeather(weather) {
-		temp = weather.main.temp;
 		var template = `
 			<img src='//openweathermap.org/img/w/${weather.weather[0].icon}.png' id="weather-icon" alt="weather icon">
 			<div>
@@ -24,43 +21,21 @@ function WeatherController() {
 			</div>
 		`;
 		$("#weather").html(template);
-		convertToCelcius();
+		drawTemperature(weather.main.temp);
 	}
 
-	function drawTemperature() {
-		$("#temperature").html(`${Math.round(temp)}&#176${currentUnit}`);
-	}
-
-	this.convertTemp = function () {
-		if (currentUnit == "C")
-			convertToFahrenheit();
-		else if (currentUnit == "F")
-			convertToKelvin()
-		else
-			convertToCelcius()
-	}
-
-	function convertToCelcius() {
-		temp = temp - 273.15;
-		currentUnit = "C";
-		drawTemperature();
-	}
-
-	function convertToFahrenheit() {
-		temp = temp * 1.8 + 32;
-		currentUnit = "F";
-		drawTemperature();
-	}
-
-	function convertToKelvin() {
-		temp = (temp + 459.67) * 5 / 9;
-		currentUnit = "K";
-		drawTemperature();
+	function drawTemperature(temp) {
+		var unit = service.getMeasurementUnit();
+		$("#temperature").html(`${Math.round(temp)}&#176${unit}`);
 	}
 
 	this.getWeather = function () {
 		service.getWeather(drawWeather);
 	}
 
-	_this.getWeather();
+	this.convertTemp = function() {
+		service.convertTemp(drawTemperature);
+	}
+
+	service.start(drawWeather);
 }

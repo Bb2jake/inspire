@@ -3,10 +3,15 @@
 $text-black-outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 // BACKGROUND
+body
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.8)
+
 #background
 	height: 100vh;
 	width: 100vw;
-	background: url('../images/default-background-image.jpg') no-repeat fixed center;
+	background: no-repeat fixed center;
 	background-size: cover;
 	background-clip: content-box;
 	position: relative;
@@ -82,6 +87,7 @@ $text-black-outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
 	font-size: 18px;
 	color: white;
 	text-shadow: $text-black-outline;
+	margin-bottom: 0;
 
 #todo-counter
 	color: white;

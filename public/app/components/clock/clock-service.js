@@ -42,10 +42,12 @@ function ClockService() {
 
 	this.toggleMilitaryTime = function (getTime) {
 		isMilitary = !isMilitary;
+		localStorage.setItem('isMilitary', JSON.stringify(isMilitary));
 		getTime();
 	}
 
 	this.updateTimer = function (getTime) {
+		isMilitary = JSON.parse(localStorage.getItem('isMilitary')) || false;
 		getTime();
 		setInterval(getTime, 1000);
 	}
