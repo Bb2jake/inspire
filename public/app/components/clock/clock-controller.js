@@ -9,9 +9,8 @@ function ClockController() {
 	function drawClock(time, greeting, userName) {
 		$('#clock-text').html(time);
 		$('#greeting-text').text(greeting);
-		if (userName) {
+		if (userName)
 			$('#user-name').val(userName);
-		}
 		_this.resizeForText($('#user-name').val());
 	}
 
@@ -40,8 +39,20 @@ function ClockController() {
 
 	this.finishedUserName = function (e) {
 		e.preventDefault();
-		service.saveUserName(e.target.value);
+		let name = e.target.value.trim();
+		if (!name)
+			$('#user-name').val('');
+		service.saveUserName(name);
 	}
 
-	service.updateTimer(getTime);
+	function checkName(userName) {
+		if (!userName)
+			$('#user-name').focus();
+	}
+
+	function spinLoadingIcon () {
+		
+	}
+
+	service.updateTimer(getTime, checkName);
 }

@@ -17,7 +17,6 @@ function ClockService() {
 		if (!isMilitary) {
 			if (hours >= 12) {
 				hours -= 12;
-				// TODO: Have am/pm only show up on hover, and not displace the clock
 				append = 'pm';
 			} else {
 				append = 'am';
@@ -33,11 +32,11 @@ function ClockService() {
 
 	function getGreeting(hours) {
 		if (hours < 12)
-			return "Good morning, ";
+			return "Good morning,";
 		else if (hours < 18)
-			return "Good afternoon, ";
+			return "Good afternoon,";
 		else
-			return "Good evening, ";
+			return "Good evening,";
 	}
 
 	this.toggleMilitaryTime = function (getTime) {
@@ -46,10 +45,11 @@ function ClockService() {
 		getTime();
 	}
 
-	this.updateTimer = function (getTime) {
+	this.updateTimer = function (getTime, checkName) {
 		isMilitary = JSON.parse(localStorage.getItem('isMilitary')) || false;
 		userName = localStorage.getItem('userName') || '';
 		getTime(userName);
+		checkName(userName);
 		setInterval(getTime, 1000);
 	}
 

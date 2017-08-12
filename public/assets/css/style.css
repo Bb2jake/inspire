@@ -42,7 +42,7 @@ body {
 }
 
 #city {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #temperature {
@@ -183,4 +183,8 @@ label {
   white-space: pre;
   font-size: 4em;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#user-name-span {
+  display: none;
 }
