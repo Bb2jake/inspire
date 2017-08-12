@@ -47,24 +47,33 @@ function TodoController() {
 	}
 
 	// TODO: Clicking anywhere outside the todo-list should close it as well.
-	this.toggleListDisplay = function () {
-		$('#todo-list').toggle();
-		if (document.getElementById('todo-list').style.display == "block")
+	// this.showListDisplay = function () {
+	// 	$('#todo-list').show();
+	// 	listenForClickOutside();
+	// }
+
+	function listenForTodoButtonClick() {
+		$('#todo-button').click(e => {
+			$('#todo-button').unbind('click');
+			$('#todo-list').show();
 			listenForClickOutside();
+		})
 	}
 
 	// Closes the todolist when clicking anywhere outside of it.
 	function listenForClickOutside() {
 		$(document).mouseup(function (e) {
 			var todoList = $("#todo-list");
-
 			// if the target of the click isn't the container nor a descendant of the container
 			if (!todoList.is(e.target) && todoList.has(e.target).length === 0) {
 				todoList.hide();
 				$(document).unbind('mouseup');
+				setTimeout (listenForTodoButtonClick, 1);
 			}
 		});
 	}
+
+	listenForTodoButtonClick();
 
 	getTodos();
 }
