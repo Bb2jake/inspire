@@ -5,7 +5,7 @@ function TodoController() {
 		service.getTodos(draw)
 	}
 
-	// TODO: Show max of n todos, and have scrolling.
+	// TODO: Have max of n todos, or have scrolling when n/size is reached
 	function draw(todos) {
 		var template = '';
 
@@ -45,12 +45,6 @@ function TodoController() {
 	this.removeTodo = function (todoId) {
 		service.removeTodo(todoId, getTodos);
 	}
-
-	// TODO: Clicking anywhere outside the todo-list should close it as well.
-	// this.showListDisplay = function () {
-	// 	$('#todo-list').show();
-	// 	listenForClickOutside();
-	// }
 
 	function listenForTodoButtonClick() {
 		$('#todo-button').click(e => {
