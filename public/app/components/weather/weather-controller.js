@@ -15,7 +15,6 @@ function WeatherController() {
 	 */
 
 	function drawWeather(weather) {
-		console.log(weather);
 		temp = weather.main.temp;
 		var template = `
 			<img src='//openweathermap.org/img/w/${weather.weather[0].icon}.png' id="weather-icon" alt="weather icon">

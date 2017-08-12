@@ -17,6 +17,7 @@ function ClockService() {
 		if (!isMilitary) {
 			if (hours >= 12) {
 				hours -= 12;
+				// TODO: Have am/pm only show up on hover, and not displace the clock
 				append = 'pm';
 			} else {
 				append = 'am';

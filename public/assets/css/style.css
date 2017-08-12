@@ -8,10 +8,19 @@
   position: relative;
 }
 
-#background-description {
+#background-info {
   position: absolute;
   bottom: 5px;
   left: 5px;
+  display: flex;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  cursor: pointer;
+  align-items: center;
+}
+
+#background-info p {
+  margin: 0 0 0 5px;
 }
 
 #weather {
@@ -101,7 +110,7 @@
 }
 
 .todo div input {
-  margin-right: 5px;
+  margin: auto 5px auto 0;
 }
 
 #add-todo-form input {
@@ -110,6 +119,7 @@
 
 label {
   max-width: 90%;
+  margin: 0;
 }
 
 #clock {

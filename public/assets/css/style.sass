@@ -11,10 +11,18 @@ $text-black-outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
 	background-clip: content-box;
 	position: relative;
 
-#background-description
+#background-info
 	position: absolute;
 	bottom: 5px;
 	left: 5px;
+	display: flex;
+	color: white;
+	text-shadow: $text-black-outline;
+	cursor: pointer;
+	align-items: center;
+
+#background-info p
+	margin: 0 0 0 5px;
 
 // WEATHER
 #weather
@@ -91,13 +99,14 @@ $text-black-outline: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px
 	align-items: center;
 
 .todo div input
-	margin-right: 5px;
+	margin: auto 5px auto 0;
 
 #add-todo-form input
 	width: 100%;
 
 label
 	max-width: 90%;
+	margin: 0;
 
 // CLOCK
 #clock
