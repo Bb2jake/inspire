@@ -50,9 +50,5 @@ function ClockController() {
 			$('#user-name').focus();
 	}
 
-	function spinLoadingIcon () {
-		
-	}
-
 	service.updateTimer(getTime, checkName);
 }

@@ -4,9 +4,6 @@ function ImageService() {
 	var apiUrl = url + encodeURIComponent(url2);
 
 	this.getImage = function (drawImage) {
-		$('#background-info p').html('Loading Image...');
-		$('#background-info').off('click');
-
 		return $.get(apiUrl, function (res) {
 			res = JSON.parse(res)
 			drawImage(res.url)
