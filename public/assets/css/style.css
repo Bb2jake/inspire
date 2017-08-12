@@ -110,11 +110,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5px;
 }
 
 .todo > div {
   display: flex;
   align-items: center;
+}
+
+.todo input {
+  margin: auto 5px auto 0;
 }
 
 #add-todo-form {

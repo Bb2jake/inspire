@@ -100,10 +100,14 @@ body
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 5px;
 
 .todo > div
 	display: flex;
 	align-items: center;
+
+.todo input
+	margin: auto 5px auto 0;
 
 #add-todo-form
 	margin-bottom: 0;
@@ -165,3 +169,7 @@ label
 
 #user-name-span
 	display: none;
+
+@media screen and (max-width: 900px)
+	#todo-list-container p
+		font-size: 28px;

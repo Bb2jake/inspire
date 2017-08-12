@@ -36,7 +36,7 @@
 			<p id="clock-text" onclick="app.controllers.clock.toggleMilitaryTime()"></p>
 			<div id="greeting">
 				<p id="greeting-text"></p>
-				<form onsubmit="app.controllers.clock.blurForm(event)" autocomplete="off">
+				<form onsubmit="app.controllers.clock.blurForm(event)" autocomplete="off" spellcheck="false">
 					<input onblur="app.controllers.clock.finishedUserName(event)" maxlength="15" id="user-name" name="userName" placeholder="enter name" class="resizing-input"
 					 oninput="app.controllers.clock.resizeForText(event)">
 					<span id="user-name-span"></span>
