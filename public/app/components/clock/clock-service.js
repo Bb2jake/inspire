@@ -1,10 +1,10 @@
 function ClockService() {
 	var _this = this;
 	var isMilitary = false;
-	var userName = "Jake";
+	var userName = "";
 	var shownTime = '';
 
-	this.getTime = function (drawClock) {
+	this.getTime = function (drawClock, name) {
 		let date = new Date();
 		let append = '';
 		let hours = date.getHours();
@@ -27,7 +27,7 @@ function ClockService() {
 		let time = hours + ":" + minutes + append;
 		if (time != shownTime) {
 			shownTime = time;
-			drawClock(time, greeting, userName);
+			drawClock(time, greeting, name);
 		}
 	}
 
@@ -48,7 +48,13 @@ function ClockService() {
 
 	this.updateTimer = function (getTime) {
 		isMilitary = JSON.parse(localStorage.getItem('isMilitary')) || false;
-		getTime();
+		userName = localStorage.getItem('userName') || '';
+		getTime(userName);
 		setInterval(getTime, 1000);
+	}
+
+	this.saveUserName = function (name) {
+		userName = name;
+		localStorage.setItem('userName', userName);
 	}
 }

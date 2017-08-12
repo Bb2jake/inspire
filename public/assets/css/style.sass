@@ -75,7 +75,8 @@ body
 #todo-list
 	display: none;
 	padding: 5px;
-	background-color: black;
+	background-color: rgba(0,0,0,0.7);
+	border-radius: 5px;
 
 #todos
 	color: white;
@@ -104,11 +105,17 @@ body
 	display: flex;
 	align-items: center;
 
-.todo div input
-	margin: auto 5px auto 0;
+#add-todo-form
+	margin-bottom: 0;
+	color: white;
 
 #add-todo-form input
+	margin: auto 5px auto 0;
 	width: 100%;
+	background: none;
+	border-top: none;
+	border-right: none;
+	border-left: none;
 
 label
 	max-width: 90%;
@@ -129,13 +136,29 @@ label
 	font-size: 10em;
 	cursor: pointer;
 
+#greeting
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 #greeting-text
 	font-size: 4em;
+	padding-right: 10px;
+	margin: 0;
+
+#clock form
+	margin-bottom: 0;
 
 #user-name
+	background: none;
 	border: none;
-	display: inline;
-	font-family: inherit;
-	font-size: inherit;
-	padding: none;
-	width: auto;
+
+#user-name::placeholder
+	color: rgba(255, 255, 255, 0.7);
+	text-shadow: $text-black-outline;
+
+#user-name-span, #user-name
+	padding: 0;
+	white-space: pre;
+	font-size: 4em;
+	text-shadow: $text-black-outline;

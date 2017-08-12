@@ -8,7 +8,8 @@
 
 <body id="body">
 	<div id="background">
-		<div id="background-info"> <!-- onclick="app.controllers.image.getImage()"> -->
+		<div id="background-info">
+			<!-- onclick="app.controllers.image.getImage()"> -->
 			<span class="glyphicon glyphicon-refresh"></span>
 			<p>Get new image</p>
 		</div>
@@ -24,7 +25,7 @@
 					<p>0 to do</p>
 				</div>
 				<ul id="todos" class="text-left"></ul>
-				<form id="add-todo-form" onsubmit="app.controllers.todo.addTodo(event)">
+				<form id="add-todo-form" autocomplete="off" onsubmit="app.controllers.todo.addTodo(event)">
 					<input type="text" name="description" placeholder="New Todo">
 				</form>
 			</div>
@@ -33,7 +34,14 @@
 
 		<div id="clock" class="text-center">
 			<p id="clock-text" onclick="app.controllers.clock.toggleMilitaryTime()"></p>
-			<p id="greeting-text"><span id="user-name"></span></p>
+			<div id="greeting">
+				<p id="greeting-text"></p>
+				<form onsubmit="app.controllers.clock.blurForm(event)" autocomplete="off">
+					<input onblur="app.controllers.clock.finishedUserName(event)" maxlength="15" id="user-name" name="userName" placeholder="enter name" class="resizing-input"
+					 oninput="app.controllers.clock.resizeForText(event)">
+					<span id="user-name-span" style="display:none"></span>
+				</form>
+			</div>
 		</div>
 	</div>
 
