@@ -10,7 +10,7 @@ function TodoController() {
 		var template = '';
 
 		var uncompleteTodos = todos.filter(todo => !todo.completed);
-		$('#todo-counter').html(uncompleteTodos.length + ' to do')
+		$('#todo-counter p').html(uncompleteTodos.length + ' to do')
 
 		todos.forEach(todo => {
 			template += `
