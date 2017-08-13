@@ -1,14 +1,36 @@
 function WeatherService() {
 	var _this = this;
+	var coords;
 	var url = '//bcw-getter.herokuapp.com/?url=';
-	var url2 = 'http://api.openweathermap.org/data/2.5/weather?q=boise&&APPID=bd82255fd0a21fa1238699b9eda2ee35'
-	var apiUrl = url + encodeURIComponent(url2);
+	var apiBase = 'http://api.openweathermap.org/data/2.5/weather?';
+	var apiKey = '&APPID=bd82255fd0a21fa1238699b9eda2ee35';
 	var weather;
 	var measurementUnit = 'K'; // Comes from api as kelvin
 
+	function getApiUrl() {
+		var query = "q=boise";
+		if (coords) {
+			query = `lat=${coords.latitude}&lon=${coords.longitude}`;
+		}
+		return apiUrl = url + encodeURIComponent(apiBase + query + apiKey);
+	}
+
 	this.start = function (drawWeather) {
 		measurementUnit = localStorage.getItem('measurementUnit') || 'K';
-		_this.getWeather(drawWeather);
+		getGeolocation(drawWeather);
+	}
+
+	function getGeolocation(drawWeather) {
+		if ("geolocation" in navigator) {
+			navigator.geolocation.getCurrentPosition(position => {
+				coords = position.coords;
+				_this.getWeather(drawWeather);
+			}, () => {
+				_this.getWeather(drawWeather);
+			})
+		} else {
+			_this.getWeather(drawWeather);
+		}
 	}
 
 	this.getMeasurementUnit = function () {
@@ -16,7 +38,7 @@ function WeatherService() {
 	}
 
 	this.getWeather = function (drawWeather) {
-		$.get(apiUrl, weatherObj => {
+		$.get(getApiUrl(), weatherObj => {
 			weather = JSON.parse(weatherObj)
 			initialConversion();
 			drawWeather(weather);

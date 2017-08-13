@@ -16,7 +16,8 @@ function ClockService() {
 
 		if (!isMilitary) {
 			if (hours >= 12) {
-				hours -= 12;
+				if (hours > 12)
+					hours -= 12;
 				append = 'pm';
 			} else {
 				if (hours == 0)
